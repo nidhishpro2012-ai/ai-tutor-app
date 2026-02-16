@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Personal Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="panel auth-panel" id="auth-panel">
+        <h1>AI Study Assistant</h1>
+        <p class="subtitle">Learn smarter with math, science, and creative help.</p>
+
+        <form id="auth-form">
+          <h2 id="auth-title">Login</h2>
+          <input id="username" type="text" placeholder="Username (for sign up)" class="hidden" />
+          <input id="email" type="email" placeholder="Email" required />
+          <input id="password" type="password" placeholder="Password" required />
+          <button type="submit" id="auth-submit">Login</button>
+        </form>
+
+        <button class="link" id="toggle-auth">Need an account? Sign up</button>
+        <div id="auth-status" class="status"></div>
+      </aside>
+
+      <main class="panel chat-panel">
+        <header>
+          <div>
+            <h2>Assistant Chat</h2>
+            <p id="welcome-text">Please log in to start chatting.</p>
+          </div>
+          <div class="controls">
+            <select id="subject-mode">
+              <option value="general">General</option>
+              <option value="math">Math</option>
+              <option value="science">Science</option>
+              <option value="creative-writing">Creative Writing</option>
+            </select>
+            <button id="logout-btn" class="secondary hidden">Logout</button>
+          </div>
+        </header>
+
+        <section id="dashboard" class="dashboard hidden">
+          <div>
+            <span>Questions Asked</span>
+            <strong id="questions-count">0</strong>
+          </div>
+          <div>
+            <span>Total Messages</span>
+            <strong id="messages-count">0</strong>
+          </div>
+        </section>
+
+        <section id="chat-history" class="chat-history"></section>
+
+        <form id="chat-form" class="chat-form hidden">
+          <button type="button" id="voice-btn" class="secondary" title="Voice input">🎤</button>
+          <input id="message-input" type="text" placeholder="Type your question and press Enter..." />
+          <button type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
